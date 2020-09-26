@@ -1,3 +1,6 @@
+<?php
+require_once  'connection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,7 @@
 <body>
 	<!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.php">
         <img src="img/navbar.png" width="200" height="55" alt="" loading="lazy">
       </a>
     <div class="container">
@@ -27,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#Promotion">Promotion</a>
+						<a class="nav-link js-scroll-trigger" href="create.php">Create Film</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#Allplaylist">All playlist</a>
@@ -80,43 +83,22 @@
 
 <!-- Card -->
 <div class="row row-cols-1 row-cols-md-4 text-center">
+  <?php
+    $mv = $conn->query("SELECT * FROM playlist");
+    while ($data = $mv->fetch_assoc()):
+  ?>
   <div id="Allplaylist" class="col mb-4">
     <div class="card h-100">
       <img src="img/tarungsarung.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h2 class="card-title" >Tarung Sarung</h2><br>
-        <button class="btn btn-primary">See Detail</button>  
+        <a href="detail.php?id=<?=$data['id']?>" class="btn btn-primary">See Detail</a>  
       </div>
     </div>
-  </div>
-  <div id="Allplaylist" class="col mb-4">
-    <div class="card h-100">
-      <img src="img/theoutpost.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card-title">The Outpost</h2><br>
-        <button class="btn btn-primary">See Detail</button>  
-      </div>
-    </div>
-  </div>
-  <div id="Allplaylist" class="col mb-4">
-    <div class="card h-100">
-      <img src="img/jodohkuyangmana.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card-title">Jodohku Yang Mana? Molulo 2</h2><br>
-        <button class="btn btn-primary">See Detail</button>  
-      </div>
-    </div>
-  </div>
-  <div id="Allplaylist" class="col mb-4">
-    <div class="card h-100">
-      <img src="img/blackwaterabyss.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card-title text-center">Black Water:Abyss</h2><br>
-        <button class="btn btn-primary">See Detail</button>  
-      </div>
-    </div>
+  <?php endwhile ?>
   </div>
 </div>
+ 
 <!-- End Card -->
 
 <!-- Footer -->
