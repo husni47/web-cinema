@@ -33,36 +33,41 @@ require_once 'connection.php';
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please fill out this field.</div>
         </div>
-
+ 
         <div class="form-group">
-        <lable for="trailer">Trailer:</label>
-        <input type="text" class="form-control" placeholder="enter penerbit film" name="trailer" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
+            <lable for="trailer">Trailer:</label>
+            <input type="text" class="form-control" placeholder="enter trailer film" name="trailer" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-group">
-        <lable for="production">Production:</label>
-        <input type="text" class="form-control" placeholder="enter penerbit film" name="production" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
+            <lable for="production">Production:</label>
+            <input type="text" class="form-control" placeholder="enter productiont film" name="production" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-group">
-        <lable for="synopsis">Synopsis:</label>
-        <textarea class="form-control"  rows="5" name="synopsis"></textarea>
+            <lable for="synopsis">Synopsis:</label>
+            <textarea class="form-control"  rows="7" name="synopsis"></textarea>
         </div>
 
         <div class="form-group">
-        <lable for="cast">Cast:</label>
-        <input type="text" class="form-control" placeholder="enter penerbit film" name="cast" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
+            <lable for="cast">Cast:</label>
+            <input type="text" class="form-control" placeholder="enter cast film" name="cast" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
-    <br>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    <a href="home.php" class="btn btn-danger">cancel</a>
+        <div class="form-group">
+            <label>Upload Image:</label><br>
+            <input type="file" name="img" required="" />
+            <p style="color: red">Ekstensi yg diperbolehkan .png | .jpg | .jpeg </p>
+        </div>
+        <br>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <a href="home.php" class="btn btn-danger">cancel</a>
 </div>
 </form>
 
