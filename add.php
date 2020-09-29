@@ -24,8 +24,8 @@ include 'connection.php';
         header("location:home.php?alert=gagal_ekstensi");
     }else{
         if($ukuran < 1044070){
-            $pict = $rand.'_'.$img;
-            move_uploaded_file($_FILES['img']['tmp_name'], 'image/'.$rand.'_'.$img);
+            $pict = $rand.'_'.$img; 
+            move_uploaded_file($_FILES['img']['tmp_name'], 'img/'.$rand.'_'.$img);
 
             mysqli_query($conn, "INSERT INTO playlist VALUES ('', '$title', '$genre', '$trailer', '$production',
             '$synopsis', '$cast', '$pict')");
